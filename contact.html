@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pepperwood · contact | authority journal</title>
+  <!-- unique premium typography: inter & eb garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ----- reset & base (same as original) ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0d0b; 
+      color: #ece3da;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      padding: 1.5rem 2rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ----- brand identity: pepperwood ----- */
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      background: #b48b5a;
+      color: #0f0d0b;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-4deg);
+      font-weight: 700;
+      font-family: 'EB Garamond', serif;
+      box-shadow: 0.4rem 0.4rem 0 #2b221b;
+    }
+    .brand-name {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 2rem;
+      color: #f2e7db;
+      letter-spacing: -0.02em;
+    }
+    .brand-name span { color: #b48b5a; font-weight: 400; }
+    .brand-tagline {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #8f7a66;
+      margin-left: 0.75rem;
+      font-weight: 300;
+      border-left: 1px solid #3d322b;
+      padding-left: 1rem;
+    }
+
+    /* ----- navigation ----- */
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 1.8rem 0;
+      border-bottom: 1px solid #2b221b;
+      flex-wrap: wrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #c6b6a6;
+    }
+    .nav-links a { transition: color 0.2s; }
+    .nav-links a:hover { color: #e7d9cc; }
+    .nav-actions {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+      color: #a58d79;
+    }
+    .nav-actions span { cursor: default; }
+
+    /* ----- contact hero (unique for this page) ----- */
+    .contact-hero {
+      margin: 2.8rem 0 2.5rem 0;
+      padding: 2.5rem 3rem 2.5rem 3rem;
+      background: #1b1612;
+      border-radius: 4rem 0 4rem 0;
+      box-shadow: 1.2rem 1.2rem 0 #2b221b, 0 0 0 1px #3d322b inset;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .contact-hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: #f2e1d2;
+      letter-spacing: -0.02em;
+    }
+    .contact-hero h1 small {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #b48b5a;
+      margin-top: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+    .contact-hero .sub {
+      color: #b6a392;
+      max-width: 400px;
+      font-size: 1.05rem;
+      border-left: 2px solid #b48b5a;
+      padding-left: 1.5rem;
+    }
+
+    /* ----- contact grid (form + info) ----- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 2.5rem 2rem;
+      margin: 2rem 0 3rem 0;
+    }
+
+    .contact-form {
+      background: #16120f;
+      padding: 2.2rem 2.2rem 2.5rem 2.2rem;
+      border-radius: 0 3rem 0 3rem;
+      box-shadow: 0.6rem 0.6rem 0 #241d17, 0 0 0 1px #332921 inset;
+    }
+    .contact-form label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b48b5a;
+      margin-bottom: 0.3rem;
+      margin-top: 1.2rem;
+    }
+    .contact-form label:first-of-type { margin-top: 0; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: #0f0d0b;
+      border: 1px solid #332921;
+      padding: 0.8rem 1rem;
+      border-radius: 1.2rem 0 1.2rem 0;
+      color: #ece3da;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: border 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #b48b5a;
+      box-shadow: 0 0 0 2px #b48b5a40;
+    }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .contact-form .btn {
+      margin-top: 1.8rem;
+      background: #b48b5a;
+      border: 0;
+      color: #0f0d0b;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.8rem 2.8rem;
+      border-radius: 3rem 0 3rem 0;
+      cursor: pointer;
+      transition: all 0.15s;
+      letter-spacing: 0.04em;
+      box-shadow: 0.3rem 0.3rem 0 #1f1813;
+    }
+    .contact-form .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0.6rem 0.6rem 0 #1f1813;
+      background: #c49a6c;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .info-card {
+      background: #14110e;
+      padding: 1.8rem 2rem;
+      border-radius: 2rem 0 2rem 0;
+      box-shadow: 0.4rem 0.4rem 0 #1f1813;
+      border: 1px solid #2a211b;
+    }
+    .info-card:nth-child(2) {
+      border-radius: 0 2rem 0 2rem;
+      background: #1b1612;
+    }
+    .info-card h3 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      color: #f0dfd1;
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .info-card p, .info-card a {
+      color: #b6a392;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .info-card a {
+      color: #b48b5a;
+      border-bottom: 1px dotted #b48b5a;
+    }
+    .info-card a:hover { color: #dccfc2; }
+    .info-card .icon { font-size: 1.8rem; margin-right: 0.5rem; }
+
+    /* ----- address / map block (extra) ----- */
+    .address-block {
+      background: #1e1813;
+      padding: 1.8rem 2rem;
+      border-radius: 1.5rem 1.5rem 0 1.5rem;
+      border: 1px solid #332921;
+      margin-top: 0.5rem;
+    }
+    .address-block h4 {
+      font-family: 'EB Garamond', serif;
+      color: #b48b5a;
+      font-size: 1.1rem;
+    }
+    .address-block p { color: #a58d79; font-size: 0.9rem; }
+
+    /* ----- footer (same as original) ----- */
+    .footer-almanac {
+      margin-top: 5rem;
+      padding: 3rem 0 2rem 0;
+      border-top: 2px solid #1f1813;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      background: #0b0908;
+      border-radius: 4rem 0 0 0;
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
+      box-shadow: 0 -0.5rem 0 #1f1813;
+    }
+    .footer-brand .brand-icon { font-size: 2rem; width: 2.4rem; height: 2.4rem; }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-col h4 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      color: #b48b5a;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.5rem; font-size: 0.85rem; color: #9a8a7a; }
+    .footer-col li:hover { color: #dccfc2; cursor: default; }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      body { padding: 1rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-hero { flex-direction: column; align-items: start; gap: 1rem; }
+      .footer-almanac { grid-template-columns: 1fr 1fr; }
+      .nav-wrap { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .brand-tagline { margin-left: 0; padding-left: 0; border: 0; }
+    }
+    @media (max-width: 550px) {
+      .footer-almanac { grid-template-columns: 1fr; }
+      .contact-hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- navigation (exactly as original) -->
+<div class="nav-wrap">
+  <div class="brand">
+    <span class="brand-icon">◈</span>
+    <span class="brand-name">Pepperwood <span>·</span> Almanac</span>
+    <span class="brand-tagline">baker’s chronicle</span>
+  </div>
+  <div class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" style="color:#e7d9cc;">Contact</a></li>
+    <li><a href="terms.html">Terms Of Privacy</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="cookies.html">Cookies Policy</a></li>
+    <li><a href="categories.html">CATEGORIES</a></li>
+    <li><a href="disclamier.html">DISCLAMIER</a></li>
+  </div>
+  <div class="nav-actions">
+    <span>🔍</span>
+    <span>✎</span>
+  </div>
+</div>
+
+<!-- contact hero (unique) -->
+<div class="contact-hero">
+  <h1>
+    📬 contact
+    <small>the editorial desk</small>
+  </h1>
+  <div class="sub">
+    We welcome letters, dough‑related queries, and submissions.<br>
+    <span style="color:#b48b5a;">— reach out</span>
+  </div>
+</div>
+
+<!-- contact grid: form + info -->
+<div class="contact-grid">
+  <!-- form column -->
+  <div class="contact-form">
+    <form action="#" method="post">
+      <label for="name">full name</label>
+      <input type="text" id="name" placeholder="e.g. Margot Reed" required>
+
+      <label for="email">email address</label>
+      <input type="email" id="email" placeholder="margot@pepperwood.com" required>
+
+      <label for="subject">subject</label>
+      <input type="text" id="subject" placeholder="sourdough starter, editorial, etc.">
+
+      <label for="message">message</label>
+      <textarea id="message" placeholder="Tell us about your bake, a question, or a proposal…"></textarea>
+
+      <button type="submit" class="btn">✧ send message</button>
+    </form>
+    <p style="margin-top: 1rem; font-size:0.75rem; color:#5f5244;">We aim to reply within 48 hours.</p>
+  </div>
+
+  <!-- info column -->
+  <div class="contact-info">
+    <div class="info-card">
+      <h3>✎ direct line</h3>
+      <p><span class="icon">✉</span> <a href="mailto:editor@pepperwood.com">editor@pepperwood.com</a></p>
+      <p style="margin-top: 0.2rem;"><span class="icon">📞</span> +1 (555) 726‑2026</p>
+      <p style="margin-top: 0.8rem; font-size:0.9rem; color:#8f7a66;">for urgent baking emergencies, call between 6am–8pm PST.</p>
+    </div>
+    <div class="info-card">
+      <h3>📍 postal</h3>
+      <p>Pepperwood Almanac<br>1200 Flourish Lane, Suite B<br>San Francisco, CA 94110</p>
+      <div class="address-block" style="margin-top: 0.8rem; background: #1f1813; border-radius: 1rem 0 1rem 0; padding: 1rem;">
+        <h4>📮 submissions</h4>
+        <p style="color:#b6a392;">We accept essays, recipes, and bread‑related art. Please include a short bio.</p>
+      </div>
+    </div>
+    <div class="info-card" style="border-radius: 0 2rem 0 2rem; background: #1b1612;">
+      <h3>🕊️ social</h3>
+      <p style="display: flex; gap: 1.5rem; flex-wrap: wrap; color:#b48b5a;">
+        <span>𝕏 @pepperwood</span>
+        <span>📸 @pepperwood.bread</span>
+        <span>🕸️ journal</span>
+      </p>
+      <p style="margin-top: 0.4rem; font-size:0.85rem; color:#7a6a5b;">Follow for daily bread wisdom.</p>
+    </div>
+  </div>
+</div>
+
+<!-- extra: faq snippet (in keeping with almanac style) -->
+<div style="background: #14110e; padding: 2rem 2.5rem; border-radius: 0 3rem 0 3rem; border-left: 6px solid #b48b5a; margin: 2rem 0 1rem 0;">
+  <h3 style="font-family: 'EB Garamond', serif; color:#eeded0; font-size:1.6rem;">❓ quick contact FAQ</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem; color:#b6a392; font-size:0.9rem;">
+    <div><strong style="color:#b48b5a;">Response time?</strong> Usually within 1–2 business days.</div>
+    <div><strong style="color:#b48b5a;">Submissions?</strong> Yes, we review pitches monthly.</div>
+    <div><strong style="color:#b48b5a;">Bulk orders?</strong> Please email our wholesale desk.</div>
+    <div><strong style="color:#b48b5a;">Media kit?</strong> Available on request.</div>
+  </div>
+</div>
+
+<!-- footer (original, with all pages linked) -->
+<div class="footer-almanac">
+  <div class="footer-brand">
+    <span class="brand-icon">◈</span>
+    <span class="brand-name">Pepperwood <span>·</span> Almanac</span>
+    <div style="margin-top: 1rem; color: #7a6a5b; font-size: 0.8rem; max-width: 220px;">
+      authority bread journal · since 2026
+    </div>
+    <div style="margin-top: 0.5rem; font-size: 0.7rem; color: #4d3d31;">
+      © pepperwood almanac · editorial policy
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>explore</h4>
+    <ul><li>categories</li><li>authors</li><li>archive</li><li>resources</li><li>sitemap</li></ul>
+  </div>
+  <div class="footer-col">
+    <h4>info</h4>
+    <ul><li>about</li><li>contact</li><li>privacy</li><li>terms</li><li>cookie policy</li><li>disclaimer</li></ul>
+  </div>
+  <div class="footer-col">
+    <h4>connect</h4>
+    <ul><li>faq</li><li>editorial policy</li><li>advertising</li><li>newsletter</li></ul>
+  </div>
+</div>
+
+<!-- all hidden pages are referenced in nav & footer -->
+</body>
+</html>

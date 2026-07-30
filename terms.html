@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service · Pepperwood Bread Almanac</title>
+  <!-- unique premium typography: inter & eb garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ----- reset & base (same as authority journal) ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0d0b;
+      color: #ece3da;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      padding: 1.5rem 2rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ----- brand identity: pepperwood (same) ----- */
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      background: #b48b5a;
+      color: #0f0d0b;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-4deg);
+      font-weight: 700;
+      font-family: 'EB Garamond', serif;
+      box-shadow: 0.4rem 0.4rem 0 #2b221b;
+    }
+    .brand-name {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 2rem;
+      color: #f2e7db;
+      letter-spacing: -0.02em;
+    }
+    .brand-name span { color: #b48b5a; font-weight: 400; }
+    .brand-tagline {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #8f7a66;
+      margin-left: 0.75rem;
+      font-weight: 300;
+      border-left: 1px solid #3d322b;
+      padding-left: 1rem;
+    }
+
+    /* ----- navigation (exactly as original) ----- */
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 1.8rem 0;
+      border-bottom: 1px solid #2b221b;
+      flex-wrap: wrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #c6b6a6;
+    }
+    .nav-links a { transition: color 0.2s; }
+    .nav-links a:hover { color: #e7d9cc; }
+    .nav-actions {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+      color: #a58d79;
+    }
+    .nav-actions span { cursor: default; }
+
+    /* ----- TERMS PAGE SPECIFIC: legal document styling ----- */
+    .terms-hero {
+      margin: 2.8rem 0 3rem 0;
+      background: #1b1612;
+      border-radius: 3rem 0 3rem 0;
+      padding: 2.5rem 3rem 2.8rem 3rem;
+      box-shadow: 1.2rem 1.2rem 0 #2b221b, 0 0 0 1px #3d322b inset;
+    }
+    .terms-hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 3rem;
+      color: #f2e1d2;
+      letter-spacing: -0.01em;
+    }
+    .terms-hero h1 small {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #b48b5a;
+      margin-top: 0.4rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .terms-hero .meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #2f251e;
+      color: #8f7a66;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    /* Terms content styling */
+    .terms-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0 3rem 0;
+    }
+    .terms-section {
+      background: #16120f;
+      padding: 2rem 2.5rem;
+      border-radius: 0 2rem 0 2rem;
+      border: 1px solid #2a211b;
+    }
+    .terms-section h2 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #e7d9cc;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dotted #3d322b;
+    }
+    .terms-section h2 .section-number {
+      color: #b48b5a;
+      font-weight: 400;
+      margin-right: 0.5rem;
+    }
+    .terms-section p {
+      color: #b6a392;
+      line-height: 1.7;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+    .terms-section p:last-child {
+      margin-bottom: 0;
+    }
+    .terms-section ul {
+      list-style: none;
+      margin: 0.8rem 0 0.5rem 0;
+    }
+    .terms-section ul li {
+      color: #b6a392;
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .terms-section ul li::before {
+      content: "▸";
+      color: #b48b5a;
+      position: absolute;
+      left: 0;
+      font-weight: 400;
+    }
+
+    /* Effective date / highlights */
+    .terms-highlight {
+      background: #1f1813;
+      padding: 1.2rem 2rem;
+      border-radius: 2rem 0 2rem 0;
+      border-left: 4px solid #b48b5a;
+      margin-top: 1rem;
+      color: #d5c6b8;
+      font-size: 0.95rem;
+    }
+    .terms-highlight strong {
+      color: #b48b5a;
+      font-weight: 600;
+    }
+
+    /* ----- footer (exactly as original) ----- */
+    .footer-almanac {
+      margin-top: 5rem;
+      padding: 3rem 0 2rem 0;
+      border-top: 2px solid #1f1813;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      background: #0b0908;
+      border-radius: 4rem 0 0 0;
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
+      box-shadow: 0 -0.5rem 0 #1f1813;
+    }
+    .footer-brand .brand-icon { font-size: 2rem; width: 2.4rem; height: 2.4rem; }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-col h4 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      color: #b48b5a;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.5rem; font-size: 0.85rem; color: #9a8a7a; }
+    .footer-col li:hover { color: #dccfc2; cursor: default; }
+
+    /* ----- typography / extras ----- */
+    .garamond { font-family: 'EB Garamond', serif; }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      body { padding: 1rem; }
+      .terms-hero { padding: 1.8rem; }
+      .terms-section { padding: 1.5rem; }
+      .footer-almanac { grid-template-columns: 1fr 1fr; }
+      .nav-wrap { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .brand-tagline { margin-left: 0; padding-left: 0; border: 0; }
+    }
+    @media (max-width: 550px) {
+      .terms-hero h1 { font-size: 2.2rem; }
+      .footer-almanac { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- navigation (identical to original) -->
+<div class="nav-wrap">
+  <div class="brand">
+    <span class="brand-icon">◈</span>
+    <span class="brand-name">Pepperwood <span>·</span> Almanac</span>
+    <span class="brand-tagline">baker’s chronicle</span>
+  </div>
+  <div class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="terms.html">Terms Of Privacy</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="cookies.html">Cookies Policy</a></li>
+    <li><a href="categories.html">CATEGORIES</a></li>
+    <li><a href="disclamier.html">DISCLAMIER</a></li>
+  </div>
+  <div class="nav-actions">
+    <span>🔍</span>
+    <span>✎</span>
+  </div>
+</div>
+
+<!-- TERMS PAGE HERO -->
+<div class="terms-hero">
+  <h1>
+    Terms of Service
+    <small>your agreement with the Pepperwood Almanac</small>
+  </h1>
+  <div class="meta">
+    <span>📅 Effective: 1 January 2026</span>
+    <span>📌 Last updated: 15 March 2026</span>
+    <span>⚖️ Version 2.3</span>
+  </div>
+</div>
+
+<!-- TERMS CONTENT -->
+<div class="terms-content">
+
+  <!-- Section 1 -->
+  <div class="terms-section">
+    <h2><span class="section-number">1.</span> Acceptance of Terms</h2>
+    <p>
+      By accessing or using the Pepperwood Bread Almanac website (the “Service”), you agree to be bound by these Terms of Service (the “Terms”) and all applicable laws and regulations. If you do not agree with any part of these Terms, you may not use our Service.
+    </p>
+    <p>
+      We reserve the right to update or change these Terms at any time. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms. It is your responsibility to review these Terms periodically.
+    </p>
+    <div class="terms-highlight">
+      <strong>⚡ Quick note:</strong> This is a living document — like sourdough, it evolves with care. We’ll always notify you of significant changes via our newsletter or a notice on this page.
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="terms-section">
+    <h2><span class="section-number">2.</span> Use of Content</h2>
+    <p>
+      All content published on the Pepperwood Bread Almanac — including articles, photographs, illustrations, recipes, and data — is protected by copyright and intellectual property laws. You may:
+    </p>
+    <ul>
+      <li>Read, share, and link to our content for personal, non‑commercial use.</li>
+      <li>Quote brief excerpts with proper attribution to the Pepperwood Almanac and the author.</li>
+      <li>Download a single copy of any article for personal reference.</li>
+    </ul>
+    <p>
+      You may <strong>not</strong> reproduce, distribute, or commercially exploit any content without our prior written consent. For permissions, please contact our editorial team.
+    </p>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="terms-section">
+    <h2><span class="section-number">3.</span> User Contributions & Comments</h2>
+    <p>
+      We welcome thoughtful discussion and community engagement. By submitting comments, guest posts, or other contributions to the Almanac, you grant us a non‑exclusive, royalty‑free, perpetual license to publish, edit, and share your submission in any medium.
+    </p>
+    <p>
+      You are solely responsible for your contributions. They must not:
+    </p>
+    <ul>
+      <li>Infringe on the rights of any third party.</li>
+      <li>Contain defamatory, abusive, or unlawful material.</li>
+      <li>Be used for commercial promotion or spam.</li>
+    </ul>
+    <p>
+      We reserve the right to moderate, edit, or remove any contribution at our discretion.
+    </p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="terms-section">
+    <h2><span class="section-number">4.</span> Privacy & Data</h2>
+    <p>
+      Your privacy is important to us. Our <a href="privacy.html" style="color:#b48b5a; text-decoration:underline;">Privacy Policy</a> explains how we collect, use, and protect your personal data. By using the Service, you also agree to the terms of our Privacy Policy and our <a href="cookies.html" style="color:#b48b5a; text-decoration:underline;">Cookies Policy</a>.
+    </p>
+    <p>
+      We use minimal analytics to understand how our content is enjoyed — we never sell your data or use it for targeted advertising.
+    </p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="terms-section">
+    <h2><span class="section-number">5.</span> Disclaimer of Warranties</h2>
+    <p>
+      The Pepperwood Bread Almanac is provided on an “as is” and “as available” basis. We do not guarantee that the Service will be uninterrupted, error‑free, or free of viruses. All information, recipes, and techniques are shared for educational and inspirational purposes — your baking results may vary.
+    </p>
+    <p>
+      We are not liable for any loss, injury, or damage arising from your use of the Service or from following any baking advice or recipe published herein.
+    </p>
+    <div class="terms-highlight" style="border-left-color: #7a6a5b;">
+      <strong>🍞 A baker’s note:</strong> Every oven, flour, and starter is different. Use your senses — and always trust your instincts.
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="terms-section">
+    <h2><span class="section-number">6.</span> Limitation of Liability</h2>
+    <p>
+      To the fullest extent permitted by law, the Pepperwood Almanac and its contributors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, or goodwill, arising out of or in connection with your use of the Service.
+    </p>
+    <p>
+      If you are dissatisfied with any part of the Service, your sole and exclusive remedy is to discontinue using it.
+    </p>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="terms-section">
+    <h2><span class="section-number">7.</span> Governing Law</h2>
+    <p>
+      These Terms shall be governed by and construed in accordance with the laws of the State of Oregon, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved exclusively in the state or federal courts located in Portland, Oregon.
+    </p>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="terms-section">
+    <h2><span class="section-number">8.</span> Contact Information</h2>
+    <p>
+      If you have any questions about these Terms, please reach out to us:
+    </p>
+    <ul>
+      <li><strong>Email:</strong> legal@pepperwoodalmanac.com</li>
+      <li><strong>Post:</strong> Pepperwood Almanac, 1234 Grain Lane, Portland, OR 97201</li>
+      <li><strong>Contact form:</strong> <a href="contact.html" style="color:#b48b5a; text-decoration:underline;">Visit our contact page</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FOOTER (exact same as original) -->
+<div class="footer-almanac">
+  <div class="footer-brand">
+    <span class="brand-icon">◈</span>
+    <span class="brand-name">Pepperwood <span>·</span> Almanac</span>
+    <div style="margin-top: 1rem; color: #7a6a5b; font-size: 0.8rem; max-width: 220px;">
+      authority bread journal · since 2026
+    </div>
+    <div style="margin-top: 0.5rem; font-size: 0.7rem; color: #4d3d31;">
+      © pepperwood almanac · editorial policy
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>explore</h4>
+    <ul><li>categories</li><li>authors</li><li>archive</li><li>resources</li><li>sitemap</li></ul>
+  </div>
+  <div class="footer-col">
+    <h4>info</h4>
+    <ul><li>about</li><li>contact</li><li>privacy</li><li>terms</li><li>cookie policy</li><li>disclaimer</li></ul>
+  </div>
+  <div class="footer-col">
+    <h4>connect</h4>
+    <ul><li>faq</li><li>editorial policy</li><li>advertising</li><li>newsletter</li></ul>
+  </div>
+</div>
+
+</body>
+</html>

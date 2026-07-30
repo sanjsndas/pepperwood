@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Pepperwood Bread Almanac</title>
+  <!-- unique premium typography: inter & eb garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ----- reset & base (same as authority journal) ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0d0b; 
+      color: #ece3da;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      padding: 1.5rem 2rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ----- brand identity: pepperwood (same) ----- */
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      background: #b48b5a;
+      color: #0f0d0b;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-4deg);
+      font-weight: 700;
+      font-family: 'EB Garamond', serif;
+      box-shadow: 0.4rem 0.4rem 0 #2b221b;
+    }
+    .brand-name {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 2rem;
+      color: #f2e7db;
+      letter-spacing: -0.02em;
+    }
+    .brand-name span { color: #b48b5a; font-weight: 400; }
+    .brand-tagline {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #8f7a66;
+      margin-left: 0.75rem;
+      font-weight: 300;
+      border-left: 1px solid #3d322b;
+      padding-left: 1rem;
+    }
+
+    /* ----- navigation (exactly as original) ----- */
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 1.8rem 0;
+      border-bottom: 1px solid #2b221b;
+      flex-wrap: wrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #c6b6a6;
+    }
+    .nav-links a { transition: color 0.2s; }
+    .nav-links a:hover { color: #e7d9cc; }
+    .nav-actions {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+      color: #a58d79;
+    }
+    .nav-actions span { cursor: default; }
+
+    /* ----- ABOUT PAGE SPECIFIC: editorial about grid ----- */
+    .about-hero {
+      margin: 2.8rem 0 3rem 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+      background: #1b1612;
+      border-radius: 3rem 0 3rem 0;
+      padding: 2.5rem 2.5rem 2.8rem 2.5rem;
+      box-shadow: 1.2rem 1.2rem 0 #2b221b, 0 0 0 1px #3d322b inset;
+    }
+    .about-hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 3.4rem;
+      line-height: 1.1;
+      color: #f2e1d2;
+      letter-spacing: -0.01em;
+    }
+    .about-hero h1 small {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #b48b5a;
+      margin-top: 0.4rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .about-hero p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #d5c6b8;
+      max-width: 90%;
+      margin-top: 1rem;
+    }
+    .about-hero .stat {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-top: 2.2rem;
+      border-top: 1px solid #2f251e;
+      padding-top: 1.8rem;
+    }
+    .about-hero .stat-item {
+      font-family: 'EB Garamond', serif;
+    }
+    .about-hero .stat-item .num {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #b48b5a;
+      line-height: 1;
+    }
+    .about-hero .stat-item .label {
+      font-size: 0.8rem;
+      color: #8f7a66;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .about-side {
+      background: #14110e;
+      padding: 1.8rem 2rem;
+      border-radius: 2rem 0 2rem 0;
+      border: 1px solid #332921;
+      align-self: start;
+    }
+    .about-side h3 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      color: #b48b5a;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px dotted #3d322b;
+      padding-bottom: 0.6rem;
+    }
+    .about-side ul {
+      list-style: none;
+      color: #c6b6a6;
+      font-size: 0.95rem;
+    }
+    .about-side ul li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .about-side ul li::before {
+      content: "◈";
+      color: #b48b5a;
+      position: absolute;
+      left: -0.2rem;
+      font-size: 0.8rem;
+    }
+
+    /* ----- mission / team cards (similar to library) ----- */
+    .mission-section {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.2rem;
+    }
+    .mission-card {
+      background: #16120f;
+      padding: 2rem 2rem 2.2rem 2rem;
+      border-radius: 0 2.5rem 0 2.5rem;
+      box-shadow: 0.6rem 0.6rem 0 #241d17, 0 0 0 1px #332921 inset;
+    }
+    .mission-card:nth-child(2) {
+      border-radius: 2.5rem 0 2.5rem 0;
+      background: #1b1612;
+    }
+    .mission-card h3 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #f0dfd1;
+      margin-bottom: 1rem;
+    }
+    .mission-card p {
+      color: #b6a392;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    .mission-card .sig {
+      margin-top: 1.2rem;
+      color: #7a6a5b;
+      font-size: 0.85rem;
+      border-top: 1px dashed #2f251e;
+      padding-top: 1rem;
+    }
+
+    /* ----- team grid (editorial) ----- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 3.5rem 0 2rem 0;
+    }
+    .team-member {
+      background: #14110e;
+      padding: 1.8rem 1.5rem;
+      border-radius: 1.2rem 2rem 0 2rem;
+      border: 1px solid #2a211b;
+      transition: 0.15s;
+    }
+    .team-member:hover {
+      transform: translateY(-4px);
+      box-shadow: 0.6rem 0.8rem 0 #1f1813;
+    }
+    .team-member .avatar {
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .team-member h4 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #eeded0;
+    }
+    .team-member .role {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b48b5a;
+      margin: 0.2rem 0 0.6rem 0;
+    }
+    .team-member p {
+      color: #b6a392;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* ----- footer (exactly as original) ----- */
+    .footer-almanac {
+      margin-top: 5rem;
+      padding: 3rem 0 2rem 0;
+      border-top: 2px solid #1f1813;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      background: #0b0908;
+      border-radius: 4rem 0 0 0;
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
+      box-shadow: 0 -0.5rem 0 #1f1813;
+    }
+    .footer-brand .brand-icon { font-size: 2rem; width: 2.4rem; height: 2.4rem; }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-col h4 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      color: #b48b5a;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.5rem; font-size: 0.85rem; color: #9a8a7a; }
+    .footer-col li:hover { color: #dccfc2; cursor: default; }
+
+    /* ----- typography / extras ----- */
+    .garamond { font-family: 'EB Garamond', serif; }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      body { padding: 1rem; }
+      .about-hero { grid-template-columns: 1fr; }
+      .mission-section { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .footer-almanac { grid-template-columns: 1fr 1fr; }
+      .nav-wrap { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .brand-tagline { margin-left: 0; padding-left: 0; border: 0; }
+    }
+    @media (max-width: 550px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .footer-almanac { grid-template-columns: 1fr; }
+      .about-hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- navigation (identical to original) -->
+<div class="nav-wrap">
+  <div class="brand">
+    <span class="brand-icon">◈</span>
+    <span class="brand-name">Pepperwood <span>·</span> Almanac</span>
+    <span class="brand-tagline">baker’s chronicle</span>
+  </div>
+  <div class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="terms.html">Terms Of Privacy</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="cookies.html">Cookies Policy</a></li>
+    <li><a href="categories.html">CATEGORIES</a></li>
+    <li><a href="disclamier.html">DISCLAMIER</a></li>
+  </div>
+  <div class="nav-actions">
+    <span>🔍</span>
+    <span>✎</span>
+  </div>
+</div>
+
+<!-- ABOUT PAGE HERO -->
+<div class="about-hero">
+  <div>
+    <h1>
+      About the Almanac
+      <small>authority · craft · wild fermentation</small>
+    </h1>
+    <p>
+      The Pepperwood Bread Almanac is a living journal dedicated to the art, science, and culture of bread. 
+      Founded in 2026, we document the baker’s craft from grain to crumb — with rigor, curiosity, and a deep respect for tradition.
+    </p>
+    <div class="stat">
+      <div class="stat-item"><span class="num">120+</span> <span class="label">articles</span></div>
+      <div class="stat-item"><span class="num">34</span> <span class="label">contributors</span></div>
+      <div class="stat-item"><span class="num">8</span> <span class="label">countries</span></div>
+    </div>
+  </div>
+  <div class="about-side">
+    <h3>◈ editorial pillars</h3>
+    <ul>
+      <li>Heritage grains & milling</li>
+      <li>Wild yeast & sourdough</li>
+      <li>Oven craft & steam</li>
+      <li>Seasonal baking</li>
+      <li>Baker’s stories</li>
+    </ul>
+    <div style="margin-top: 1.5rem; font-size:0.85rem; color:#7a6a5b; border-top:1px solid #2f251e; padding-top:1rem;">
+      <span>🔖 ISSN 2994-8271</span>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION / VALUES -->
+<div class="mission-section">
+  <div class="mission-card">
+    <h3>⟡ our mission</h3>
+    <p>To cultivate a deeper understanding of bread through rigorous testing, clear writing, and a shared passion for fermentation. We bridge the gap between home baker and artisan, between tradition and innovation.</p>
+    <div class="sig">— The Pepperwood Collective</div>
+  </div>
+  <div class="mission-card">
+    <h3>⟡ what we believe</h3>
+    <p>Bread is a living document. Every loaf tells a story of time, temperature, and touch. We believe in slow knowledge, honest technique, and the beauty of a well‑scored boule.</p>
+    <div class="sig">— from the editorial charter</div>
+  </div>
+</div>
+
+<!-- TEAM (editorial contributors) -->
+<div style="margin-top: 1.5rem;">
+  <h2 style="font-family: 'EB Garamond', serif; font-weight: 400; font-size: 2rem; color: #dccfc2; border-bottom: 1px solid #2b221b; padding-bottom: 1rem; margin-bottom: 1.8rem;">
+    ◈ contributors
+  </h2>
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="avatar">👩‍🍳</div>
+      <h4>Margot Reed</h4>
+      <div class="role">editor · sourdough</div>
+      <p>Margot is a former pastry chef and fermentation geek. She leads our long‑form experiments.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar">👨‍🌾</div>
+      <h4>Elias Voss</h4>
+      <div class="role">grain & milling</div>
+      <p>Elias runs a small stone‑mill and writes about ancient grains, terroir, and whole‑wheat flavour.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar">🔥</div>
+      <h4>Nina K.</h4>
+      <div class="role">oven craft</div>
+      <p>Nina is obsessed with steam, deck ovens, and the perfect crackle. She bakes at 3 am.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar">📖</div>
+      <h4>Samir Patel</h4>
+      <div class="role">hydration & dough</div>
+      <p>Samir brings a physicist’s mind to dough mechanics. He writes about hydration and gluten.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar">🌾</div>
+      <h4>Helena Baird</h4>
+      <div class="role">science editor</div>
+      <p>Dr. Baird is a food scientist who translates Maillard, enzymes, and fermentation into baking wisdom.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar">✍️</div>
+      <h4>Lena M.</h4>
+      <div class="role">visual storyteller</div>
+      <p>Lena captures the beauty of crumb, scoring, and steam in our photography and illustrations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- hidden pages (all pages included via footer & navigation) -->
+<!-- home, blog, categories, about, contact, privacy, terms, cookie, disclaimer, editorial, authors, archive, resources, faq, sitemap -->
+
+<!-- FOOTER (exact same as original) -->
+<div class="footer-almanac">
+  <div class="footer-brand">
+    <span class="brand-icon">◈</span>
+    <span class="brand-name">Pepperwood <span>·</span> Almanac</span>
+    <div style="margin-top: 1rem; color: #7a6a5b; font-size: 0.8rem; max-width: 220px;">
+      authority bread journal · since 2026
+    </div>
+    <div style="margin-top: 0.5rem; font-size: 0.7rem; color: #4d3d31;">
+      © pepperwood almanac · editorial policy
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>explore</h4>
+    <ul><li>categories</li><li>authors</li><li>archive</li><li>resources</li><li>sitemap</li></ul>
+  </div>
+  <div class="footer-col">
+    <h4>info</h4>
+    <ul><li>about</li><li>contact</li><li>privacy</li><li>terms</li><li>cookie policy</li><li>disclaimer</li></ul>
+  </div>
+  <div class="footer-col">
+    <h4>connect</h4>
+    <ul><li>faq</li><li>editorial policy</li><li>advertising</li><li>newsletter</li></ul>
+  </div>
+</div>
+
+</body>
+</html>
